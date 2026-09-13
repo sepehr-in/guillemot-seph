@@ -2,6 +2,8 @@ import argparse
 import asyncio
 import os
 
+
+from guillemot.subagents.guilVision import analyze_xrd_image
 from dotenv import load_dotenv
 from guillemot.tools import (
     check_remote_topas_running,
@@ -85,8 +87,11 @@ def create_agent(prompt: str | None = None) -> Agent:
 
     prompt_name = prompt or selected_prompt_name()
     system_prompt = render_prompt(
-        prompt_name, execution=execution, topas_example=topas_example
+        "guilVision1",
+        prompt_name=prompt_name,
+        topas_example=topas_example,
     )
+    
     print(f"📝 System prompt: {prompt_name}")
 
     # Create the agent with tools
@@ -107,6 +112,7 @@ def create_agent(prompt: str | None = None) -> Agent:
             get_samples,
             get_sample,
             list_data_files,
+            analyze_xrd_image,
         ],
         model_settings=model_settings,
         instrument=True,

@@ -13,6 +13,7 @@ dependencies = [
     "pandas>=2.3.2",
     "datalab-api",
     "pydantic-ai-harness[anthropic]>=0.4.0",
+    "pydantic-ai-slim[openai]>=1.107.5",
 ]
 
 [tool.uv]

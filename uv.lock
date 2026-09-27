@@ -1421,6 +1421,7 @@ dependencies = [
     { name = "pandas" },
     { name = "pydantic-ai" },
     { name = "pydantic-ai-harness" },
+    { name = "pydantic-ai-slim", extra = ["openai"] },
     { name = "python-dotenv" },
 ]
 
@@ -1439,6 +1440,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.3.2" },
     { name = "pydantic-ai", specifier = ">=1.0.4,<2" },
     { name = "pydantic-ai-harness", extras = ["anthropic"], specifier = ">=0.4.0" },
+    { name = "pydantic-ai-slim", extras = ["openai"], specifier = ">=1.107.5" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
 ]
 
